@@ -12,16 +12,13 @@
 
     public static void Main()
     {
-        for (int i = 0; i < 9; i++)
+        Thread t = new Thread(() =>
         {
-            Thread t = new Thread(() =>
-            {
-                Console.WriteLine("Thread is starting, press ENTER to continue...");
-                Console.ReadLine();
-            });
+            Console.WriteLine("Thread is starting, press ENTER to continue...");
+            Console.ReadLine();
+        });
 
-            t.IsBackground = true;
-            t.Start();
-        }
+        t.IsBackground = false;
+        t.Start();
     }
 }

@@ -14,11 +14,14 @@
     {
         for (int i = 0; i < 9; i++)
         {
-            Thread t = new Thread(DoWork);
-            t.Name = $"Sergio's Thread # {i}";
+            Thread t = new Thread(() =>
+            {
+                Console.WriteLine("Thread is starting, press ENTER to continue...");
+                Console.ReadLine();
+            });
+
+            t.IsBackground = true;
             t.Start();
         }
-
-        int dummy = 123;
     }
 }

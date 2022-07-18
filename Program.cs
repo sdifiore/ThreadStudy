@@ -15,7 +15,7 @@
         for (int i = 0; i < 9; i++)
         {
             Thread t = new Thread(DoWork);
-            t.Name = $"Thread {i}";
+            t.Name = $"Sergio's Thread # {i}";
             t.Start();
         }
 

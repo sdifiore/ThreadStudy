@@ -4,21 +4,17 @@
 
     public static void DoWork()
     {
-        for (int i = 0; i < REPETITIONS; i++)
+        for (int i = 0; i < 5; i++)
         {
-            Console.Write("B");
+            Console.WriteLine($"{i} *");
         }
     }
 
     public static void Main()
     {
-        Thread t = new Thread(() =>
-        {
-            Console.WriteLine("Thread is starting, press ENTER to continue...");
-            Console.ReadLine();
-        });
-
-        t.IsBackground = false;
+        Thread t = new Thread(DoWork);
         t.Start();
+
+        DoWork();
     }
 }

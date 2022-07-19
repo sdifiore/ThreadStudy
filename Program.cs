@@ -22,9 +22,12 @@
 
     public static void Main()
     {
-        Thread t1 = new Thread(DoWork);
-        t1.Start('B');
+        Thread t2 = new Thread(() =>
+        {
+            DoWork2('B');
+        });
+        t2.Start();
 
-        DoWork('A');
+        DoWork2('A');
     }
 }

@@ -21,12 +21,14 @@
 
     public static void Main()
     {
-        Thread t2 = new Thread(() =>
+        for (int i = 0; i < 10; i++)
         {
-            DoWork2('B');
-        });
-        t2.Start();
+            Thread t = new Thread(() =>
+            {
+                Console.WriteLine(i); ;
+            });
 
-        DoWork2('A');
+            t.Start();
+        }
     }
 }

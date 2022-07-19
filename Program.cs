@@ -23,9 +23,10 @@
     {
         for (int i = 0; i < 10; i++)
         {
+            int number = i;
             Thread t = new Thread(() =>
             {
-                Console.WriteLine(i); ;
+                Console.WriteLine(number); ;
             });
 
             t.Start();

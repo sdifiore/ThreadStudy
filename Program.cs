@@ -11,9 +11,8 @@
         }
     }
 
-    public static void DoWork2(object obj)
+    public static void DoWork2(char c)
     {
-        char c = (char)obj;
         for (int i = 0; i < REPETITIONS; i++)
         {
             Console.WriteLine(c);

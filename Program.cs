@@ -1,20 +1,30 @@
 ﻿public class MainClass
 {
-    public static int i = 0;
+    private const int REPETITIONS = 1_000;
 
-    public static void DoWork()
+    public static void DoWork(object obj)
     {
-        for (i = 0; i < 5; i++)
+        char c = (char)obj;
+        for (int i = 0; i < REPETITIONS; i++)
         {
-            Console.WriteLine($"{i} *");
+            Console.WriteLine(c);
+        }
+    }
+
+    public static void DoWork2(object obj)
+    {
+        char c = (char)obj;
+        for (int i = 0; i < REPETITIONS; i++)
+        {
+            Console.WriteLine(c);
         }
     }
 
     public static void Main()
     {
-        Thread t = new Thread(DoWork);
-        t.Start();
+        Thread t1 = new Thread(DoWork);
+        t1.Start('B');
 
-        DoWork();
+        DoWork('A');
     }
 }
